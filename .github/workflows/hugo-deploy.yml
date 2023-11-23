@@ -19,7 +19,8 @@ jobs:
         hugo-version: 'latest'
 
     - name: Build
-      run: hugo --minify
+      run: |
+           hugo --minify
            tar -zcvf public.tar.gz public
     
     - name: Installing SSH Client
