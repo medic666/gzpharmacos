@@ -20,23 +20,21 @@ jobs:
 
     - name: Build
       run: hugo --minify
+           tar -zcvf public.tar.gz public
     
     - name: Installing SSH Client
       run: sudo apt-get install openssh-client
 
     - name: Set up SSH Key
-      run: |
+      run: |  
         mkdir -p ~/.ssh
-        echo "${{ secrets.DEPLOY_KEY }}" > ~/.ssh/id_rsa
+        echo "${{secrets.DEPLOY_KEY}}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
         ssh-keyscan 149.28.84.44 >> ~/.ssh/known_hosts
 
-    - name: Connect to Server
+    - name: Connect to Server and Execute Commands
       run: |
-        ssh root@149.28.84.44 
-
-    - name: Execute Commands
-      run: |
-        tar -zcvf public.tar.gz public
         scp -o StrictHostKeyChecking=no public.tar.gz root@149.28.84.44:/www/wwwroot/www.gzpharmacos.com
-        tar -zxvf /www/wwwroot/www.gzpharmacos.com/public.tar.gz -C /www/wwwroot/www.gzpharmacos.com
+        ssh root@149.28.84.44 "tar -zxvf /www/wwwroot/www.gzpharmacos.com/public.tar.gz -C /www/wwwroot/www.gzpharmacos.com"
+      
+
