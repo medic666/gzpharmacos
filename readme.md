@@ -34,13 +34,9 @@
      git clone https://github.com/medic666/gzpharmacos.git
      ```
 
-3. **添加主题并启动 Hugo**：
+3. **启动 Hugo**：
    - 打开 VSCode，在相同工作目录下。
-   - 使用 `Ctrl+`` 快捷键打开命令行。
-   - 运行以下命令来添加 Hugo 主题：
-     ```
-     git submodule add git@github.com:StaticMania/roxo-hugo.git themes/roxo-hugo
-     ```
+   - 使用 `Ctrl+`~` 快捷键打开命令行。
    - 启动 Hugo 服务器：
      ```
      hugo server

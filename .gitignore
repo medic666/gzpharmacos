@@ -1,6 +1,6 @@
 public/
-themes/
-resources/_gen/
+#themes/
+#resources/_gen/
 
 # Compiled source #
 ###################
