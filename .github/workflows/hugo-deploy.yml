@@ -36,6 +36,6 @@ jobs:
     - name: Connect to Server and Execute Commands
       run: |
         scp -o StrictHostKeyChecking=no www.gzpharmacos.com.tar.gz root@149.28.84.44:/www/wwwroot
-        ssh root@149.28.84.44 "tar -zxvf /www/wwwroot/www.gzpharmacos.com.tar.gz -C /www/wwwroot"
+        ssh root@149.28.84.44 "tar -zxvf /www/wwwroot/www.gzpharmacos.com.tar.gz -C /www/wwwroot/www.gzpharmacos.com"
       
 
