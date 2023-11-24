@@ -33,11 +33,11 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{secrets.DEPLOY_KEY}}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan ${{secrets.ServerIP}} >> ~/.ssh/known_hosts
+        ssh-keyscan ${{secrets.SERVER_IP}} >> ~/.ssh/known_hosts
 
     - name: Connect to Server and Execute Commands
       run: |
-        scp -o StrictHostKeyChecking=no www.gzpharmacos.com.tar.gz root@${{secrets.ServerIP}}:/www/wwwroot
-        ssh root@${{secrets.ServerIP}} "tar -zxvf /www/wwwroot/www.gzpharmacos.com.tar.gz -C /www/wwwroot/www.gzpharmacos.com"
+        scp -o StrictHostKeyChecking=no www.gzpharmacos.com.tar.gz root@${{secrets.SERVER_IP}}:/www/wwwroot
+        ssh root@${{secrets.SERVER_IP}} "tar -zxvf /www/wwwroot/www.gzpharmacos.com.tar.gz -C /www/wwwroot/www.gzpharmacos.com"
       
 
