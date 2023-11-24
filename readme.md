@@ -23,8 +23,8 @@
 1. **设置 Git Bash 的代理**：
    - 在开始使用 Git Bash 之前，您需要配置代理设置：
      ```
-     git config --global http.proxy '127.0.0.1:10809'
-     git config --global https.proxy '127.0.0.1:10809'
+     git config --global http.proxy http://127.0.0.1:10809
+     git config --global https.proxy https://127.0.0.1:10809
      ```
 
 2. **克隆项目仓库**：
