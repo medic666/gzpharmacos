@@ -47,7 +47,7 @@ summarylength = 25
   googleAnalitycsID = "Your ID"
   # We're using formspree.io for form handling, paste your formspree url below
   fabform  = "https://www.gzpharmacos.com/forms.php"
-  version   = "0.0.8"
+  version   = "0.0.9"
 
   # Contact Form
   [params.contactForm]
@@ -147,3 +147,8 @@ summarylength = 25
         description = "develop design solutions<br>produce valuable cultural content<br>create fresh brand experience"
       [params.footer.back_to_top]
         description = "I want to <br> visit again"
+#关于markdown语法
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true  # 允许在 Markdown 中使用 HTML  

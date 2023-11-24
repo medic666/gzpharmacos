@@ -5,16 +5,21 @@ image: images/blog/blog-post-04.jpg
 feature_image: images/blog/blog-details-image.jpg
 author: Alexender Schoitiz
 ---
-### Black Lines brand identity, by & Smith
+### <font color=Red>Black Lines brand identity, by & Smith</font>
 
-Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.
+<font color=Red>Black Lines wants it to be as easy to serve a Negroni as it is a pint of lager. The drinks company is seeking to revolutionise the bar experience by serving cocktails by draught with a changing menu of drinks (as well as same favourite stand-bys). A pink grapefruit spritz was served through the summer while a new pear and white tea fizz joins the line-up for winter.</font>
 
 1. ROFL means Rolling on floor laughing.
 2. STFU means Shut the *freak* up.
 3. LMK means Let me know.
 4. ILY means I love you.
 5. YOLO means You only live once.
-6. SMH means Shaking my head.
+6. SMH means Shaking my head.   
+
+| 左对321312321齐 | 居中12321312对齐 | 右对齐12312312 |
+| :----- | :------: | -----: |
+| 文3213121232132133123本   |  文本 1231232123212321312123132131312  |   文本1231232132112312321321 |
+| 更多文1231231221321321312321本 |  更多1233213213213123123213213213文本  |  更多文12321321321本123123213 |
 
 The company was previously known as Hingston + Co. but has been given a complete rebrand — including a new logo, tap badges, website and branded material — by London-based design studio & Smith. The new identity is based on the Kandinsky abstract painting, Black Lines, and true to its name, is mostly black and white with a few flashes of colour. According to & Smith, the identity brings together “art and science” and has been brought to life through collaborations with nine illustrators.
 
