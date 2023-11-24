@@ -47,7 +47,7 @@ summarylength = 25
   googleAnalitycsID = "Your ID"
   # We're using formspree.io for form handling, paste your formspree url below
   fabform  = "https://www.gzpharmacos.com/forms.php"
-  version   = "0.0.7"
+  version   = "0.0.8"
 
   # Contact Form
   [params.contactForm]

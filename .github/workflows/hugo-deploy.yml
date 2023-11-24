@@ -1,3 +1,5 @@
+#不可以更改！！！！！！
+
 name: Deploy Hugo to Server
 
 on:
@@ -31,11 +33,11 @@ jobs:
         mkdir -p ~/.ssh
         echo "${{secrets.DEPLOY_KEY}}" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan 149.28.84.44 >> ~/.ssh/known_hosts
+        ssh-keyscan ${{secrets.ServerIP}} >> ~/.ssh/known_hosts
 
     - name: Connect to Server and Execute Commands
       run: |
-        scp -o StrictHostKeyChecking=no www.gzpharmacos.com.tar.gz root@149.28.84.44:/www/wwwroot
-        ssh root@149.28.84.44 "tar -zxvf /www/wwwroot/www.gzpharmacos.com.tar.gz -C /www/wwwroot/www.gzpharmacos.com"
+        scp -o StrictHostKeyChecking=no www.gzpharmacos.com.tar.gz root@${{secrets.ServerIP}}:/www/wwwroot
+        ssh root@${{secrets.ServerIP}} "tar -zxvf /www/wwwroot/www.gzpharmacos.com.tar.gz -C /www/wwwroot/www.gzpharmacos.com"
       
 
