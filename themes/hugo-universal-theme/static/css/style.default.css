@@ -365,18 +365,16 @@ ul.list-style-none {
 .navbar ul.dropdown-menu {
   margin: 0;
   padding: 0;
-  /*display: block;*/
+  /*display: none;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.7s ease, visibility 0.7s ease;
+  transition: opacity 0.7s ease, visibility 0.7s ease;*/
 }
-.navbar .dropdown:hover ul.dropdown-menu {
+/*.navbar .dropdown:hover ul.dropdown-menu {
   margin: 0;
   padding: 0;
-  /*display: block;*/
-  opacity: 1;
-  visibility: visible;
-}
+  display: block;
+}*/
 .navbar ul.dropdown-menu li {
   list-style-type: none;
   /*border-bottom: solid 1px #eeeeee;*/
@@ -388,7 +386,7 @@ ul.list-style-none {
   position: relative;
   color: #999999;
   font-size: 12px;
-  /*display: block;*/
+  display: block;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
