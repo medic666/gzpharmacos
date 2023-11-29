@@ -2549,8 +2549,8 @@ fieldset[disabled] .btn-template-primary.active {
   margin: 0 0 20px;
 }
 #footer {
-  background: #eeeeee;
-  padding: 50px 0;
+  /*background: #6c6c6c;*/
+  padding: 20px 0;
   color: #999999;
 }
 #footer h1,
@@ -2559,7 +2559,7 @@ fieldset[disabled] .btn-template-primary.active {
 #footer h4,
 #footer h5,
 #footer h6 {
-  color: #333333;
+  color: #cccccc;
 }
 #footer h4 {
   font-size: 14px;
@@ -2645,7 +2645,7 @@ fieldset[disabled] .btn-template-primary.active {
   color: var(--primary-accent);
 }
 #copyright {
-  background: #333;
+  /*background: #6c6c6c;*/
   color: #ccc;
   padding: 10px 0;
   font-size: 12px;

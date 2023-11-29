@@ -36,13 +36,7 @@
                     {{ $active = "active" }}
                   {{ end }}
 
-                  {{ if and (or (eq $current.RelPermalink .URL) (eq "term" $current.Kind)) (in (slice "page" "term") $current.Kind) }}
-                    {{ range (split .URL "/") }}
-                      {{ if eq "blog" . }}
-                        {{ $active = "active" }}
-                      {{ end }}
-                    {{ end }}
-                  {{ end }}
+
 
                   {{ if .HasChildren }}
                     <!-- Check if the first child marks a menu section identifier -->
