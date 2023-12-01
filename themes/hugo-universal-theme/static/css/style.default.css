@@ -3586,9 +3586,13 @@ a.list-group-item.active > .badge,
  */
 .yamm .nav,
 .yamm .collapse,
-.yamm .dropup.use-yamm ,
+.yamm .dropup.use-yamm {
+  position: static;
+}
 .yamm .dropdown.use-yamm{
   position: static;
+  display: grid;
+  grid-template-columns: 9fr 1fr; 
 }
 .yamm .container {
   position: relative;
@@ -3610,9 +3614,8 @@ a.list-group-item.active > .badge,
 span.caret {
   display: inline-block;
   transform: scale(2);
-  /*padding: 5px;*/
-  /*margin: 5px;*/
-  /* cursor: pointer; 使鼠标悬停时显示手指指针 */
+  justify-self: center;
+  align-self:center;
 }
 
 
