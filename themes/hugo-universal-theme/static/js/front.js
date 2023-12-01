@@ -21,7 +21,39 @@ $(function () {
   counters()
   demo()
   contactFormAjax()
+  mouseHoverMenu()
 })
+
+//电脑鼠标悬停弹出菜单，手机点击弹出菜单
+function mouseHoverMenu(){
+  //电脑悬停弹出菜单
+  $('.dropdown').hover(function() {
+    if ($(window).width() > 768) { // 768px 是Bootstrap的桌面端断点
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(300);
+    }
+  }, function() {
+      if ($(window).width() > 768) {
+          $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(300);
+      }
+  });
+  // 点击之外的地方关闭下拉菜单
+  $(window).on('click', function() {
+      $('.dropdown .dropdown-menu').fadeOut(300);
+  });
+  //手机点击弹出菜单
+  //if ((/Mobi|Android/i.test(navigator.userAgent)) || ($(window).width() <= 768) ){
+    // 选择所有li.dropdown下的a元素
+    /*$('li.dropdown > span.caret').each(function() {
+        $(this).addClass("dropdown-toggle");
+        $(this).attr({
+            "data-toggle": "dropdown",
+            "role": "button",
+            "aria-haspopup": "true",
+            "aria-expanded": "false"
+        });
+    });
+  //}*/
+}
 
 // Ajax contact
 function contactFormAjax () {

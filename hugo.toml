@@ -33,6 +33,7 @@ pluralizelisttitles = false
     name       = "OEM Service"
     identifier = "menu.service"
     url        = "/img/template-easy-customize.png"
+    title      = "/"
     weight     = 3
 
 [[menu.main]]
@@ -121,6 +122,7 @@ pluralizelisttitles = false
     name       = "Products"
     identifier = "menu.products"
     url        = "/img/template-homepage.png"
+    title       = "/products/"
     weight     = 2
 
 [[menu.main]]

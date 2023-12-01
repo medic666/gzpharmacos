@@ -324,6 +324,7 @@ ul.list-style-none {
 }
 .navbar ul.nav > li > a {
   /*text-transform: uppercase;*/
+  display: inline-block;
   text-decoration: underline;
   font-weight: 400;
   letter-spacing: 0.08em;
@@ -332,10 +333,14 @@ ul.list-style-none {
 .navbar ul.nav > li > a:hover {
   border-top: solid 5px var(--primary-accent);
 }
-.navbar ul.nav > li.active > a,
-.navbar ul.nav > li.open > a {
+.navbar ul.nav > li.active > a {
   text-decoration: none !important;
-  border-top: solid 5px var(--navbar-border-top);
+ /*border-top: solid 5px var(--navbar-border-top);*/
+}
+.navbar ul.nav > li.open > a {
+  text-decoration: underline !important;
+  background-color:white !important;
+  color:rgb(85,85,85) !important;
 }
 @media (max-width: 768px) {
   .navbar ul.nav > li.active > a,
@@ -3581,8 +3586,8 @@ a.list-group-item.active > .badge,
  */
 .yamm .nav,
 .yamm .collapse,
-.yamm .dropup.use-yamm,
-.yamm .dropdown.use-yamm {
+.yamm .dropup.use-yamm ,
+.yamm .dropdown.use-yamm{
   position: static;
 }
 .yamm .container {
@@ -3602,5 +3607,13 @@ a.list-group-item.active > .badge,
   left: 15px;
   right: 15px;
 }
+span.caret {
+  display: inline-block;
+  transform: scale(2);
+  /*padding: 5px;*/
+  /*margin: 5px;*/
+  /* cursor: pointer; 使鼠标悬停时显示手指指针 */
+}
+
 
 /*font-weight:700/500/Bold的全部换成400了，800/900的换成700了。*/
