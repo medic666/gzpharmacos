@@ -5,7 +5,7 @@
 - 添加oem service和products的list页面。
 - 将hover时渐隐渐显与点击时datatoggle功能分开。
 ### Fixed
-
+- 把客户展示变成彩色
 ### Changed
 - 更改了菜单布局
 - 更改了配置文件中的blog页的显示数量pagination=6

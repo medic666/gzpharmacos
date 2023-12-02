@@ -21,10 +21,10 @@ $(function () {
   counters()
   demo()
   contactFormAjax()
-  //mouseHoverMenu()
+  mouseHoverMenu()
 })
 
-/*//电脑鼠标悬停弹出菜单
+//电脑鼠标悬停弹出菜单
 function mouseHoverMenu(){
   //电脑悬停弹出菜单
   $('.dropdown').hover(function() {
@@ -40,7 +40,7 @@ function mouseHoverMenu(){
   $(window).on('click', function() {
       $('.dropdown .dropdown-menu').fadeOut(300);
   });
-}*/
+}
 
 // Ajax contact
 function contactFormAjax () {
