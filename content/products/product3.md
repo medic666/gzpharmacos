@@ -1,10 +1,8 @@
 +++
-title = "Go is for lovers"
-date = "2015-09-17T13:47:08+02:00"
-tags = ["go"]
-categories = ["programming"]
+title = "New product 23"
+producttags = ["probig3"]
+productcategories = ["perfume","eye-shadow"]
 banner = "img/banners/banner-2.jpg"
-facebook_author = "GolangSociety"
 +++
 
 Hugo uses the excellent [go][] [html/template][gohtmltemplate] library for

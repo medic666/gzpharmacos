@@ -1,10 +1,8 @@
 +++
-title = "Categories Post"
-date = "2021-08-01T21:29:20+02:00"
-blogtags = ["golang", "programming", "theme", "hugo"]
-blogcategories = ["programming","lorem","pseudo"]
+title = "New product 1"
+producttags = ["probig1"]
+productcategories = ["shampoo","hair conditioner"]
 banner = "img/banners/banner-4.jpg"
-authors = ["John Doe"]
 +++
 
 I'm a post with multiple categories in the frontmatter:

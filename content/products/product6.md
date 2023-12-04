@@ -1,9 +1,8 @@
 +++
-title = "Migrate from Jekyll"
-tags = ["ipsum"]
-categories = ["lorem"]
+title = "New product 6"
+producttags = ["probig6"]
+productcategories = ["shampoo","face cream"]
 banner = "img/banners/banner-5.jpg"
-twitter_author = "jekyllrb"
 +++
 
 ## Move static content to `static`

@@ -1,5 +1,5 @@
 baseurl = "https://www.gzpharmacos.com/" 
-title = "Universal"
+title = "Pharmacos"
 theme = "hugo-universal-theme"
 themesDir = "./themes"
 languageCode = "en-us"
@@ -30,95 +30,6 @@ pluralizelisttitles = false
     weight     = 1
 
 [[menu.main]]
-    name       = "OEM Service"
-    identifier = "menu.service"
-    url        = "/img/template-easy-customize.png"
-    title      = "/"
-    weight     = 3
-
-[[menu.main]]
-    name       = "Shortcodes"
-    identifier = "section.shortcodes"
-    url        = ""
-    weight     = 1
-    parent     = "menu.service"
-    post       = 1
-
-[[menu.main]]
-    name       = "Header variations"
-    identifier = "section.headervariations"
-    url        = ""
-    weight     = 2
-    parent     = "menu.service"
-    post       = 2
-
-[[menu.main]]
-    name       = "Accordions"
-    url        = ""
-    weight     = 1
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Alerts"
-    url        = ""
-    weight     = 2
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Buttons"
-    url        = ""
-    weight     = 3
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Content Boxes"
-    url        = ""
-    weight     = 4
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Horizontal Blocks"
-    url        = ""
-    weight     = 5
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Pagination"
-    url        = ""
-    weight     = 6
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Tabs"
-    url        = ""
-    weight     = 7
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Typography"
-    url        = ""
-    weight     = 8
-    parent     = "section.shortcodes"
-
-[[menu.main]]
-    name       = "Default Sticky Header"
-    url        = ""
-    weight     = 1
-    parent     = "section.headervariations"
-
-[[menu.main]]
-    name       = "No Sticky Header"
-    url        = ""
-    weight     = 2
-    parent     = "section.headervariations"
-
-[[menu.main]]
-    name       = "Light Header"
-    url        = ""
-    weight     = 3
-    parent     = "section.headervariations"
-
-[[menu.main]]
     name       = "Products"
     identifier = "menu.products"
     url        = "/img/template-homepage.png"
@@ -128,78 +39,78 @@ pluralizelisttitles = false
 [[menu.main]]
     name       = "Products"
     identifier = "section.products"
-    url        = ""
+    url        = "/products/"
     weight     = 1
     parent     = "menu.products"
     post       = 1
 
 [[menu.main]]
-    name       = "2 Columns"
+    name       = "分类1"
     url        = "/products/"
     weight     = 1
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "2 Columns With Negative Space"
-    url        = ""
+    name       = "分类2"
+    url        = "/products/"
     weight     = 2
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "3 Columns"
-    url        = ""
+    name       = "分类3"
+    url        = "/products/"
     weight     = 3
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "3 Columns With Negative Space"
-    url        = ""
+    name       = "分类4"
+    url        = "/products/"
     weight     = 4
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "4 Columns"
-    url        = ""
+    name       = "分类5"
+    url        = "/products/"
     weight     = 5
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "4 Columns With Negative Space"
-    url        = ""
+    name       = "分类6"
+    url        = "/products/"
     weight     = 6
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "Products - detail"
-    url        = ""
+    name       = "分类7"
+    url        = "/products/"
     weight     = 7
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "Products - detail 2"
-    url        = ""
+    name       = "分类8"
+    url        = "/products/"
     weight     = 8
     parent     = "section.products"
 
 [[menu.main]]
-    name       = "About"
-    identifier = "section.about"
+    name       = "OEM Service"
+    identifier = "section.service"
     url        = ""
     weight     = 2
     parent     = "menu.products"
     post       = 2
 
 [[menu.main]]
-    name       = "About Us"
+    name       = "Our Service"
     url        = ""
     weight     = 1
-    parent     = "section.about"
+    parent     = "section.service"
 
 [[menu.main]]
     name       = "Our Team"
     url        = ""
     weight     = 2
-    parent     = "section.about"
+    parent     = "section.service"
 
 [[menu.main]]
     name       = "Marketing"
@@ -210,9 +121,15 @@ pluralizelisttitles = false
     post       = 2
 
 [[menu.main]]
-    name       = "Packages"
+    name       = "Payments"
     url        = ""
     weight     = 1
+    parent     = "section.marketing"
+
+[[menu.main]]
+    name       = "Packages"
+    url        = ""
+    weight     = 2
     parent     = "section.marketing"
 
 [[menu.main]]
@@ -272,6 +189,7 @@ pluralizelisttitles = false
     defaultKeywords = ["devcows", "hugo", "go"]
     mainSections = ["products","blog"]
     productSections=["products"]
+    blogSections = ["blog"]
     defaultDescription = "Site template made by Devcows using Hugo"
 
     # Social media
@@ -332,7 +250,7 @@ pluralizelisttitles = false
     dropdown_mouse_over = false
 
     disabled_logo = false
-    logo_text = "Universal"
+    logo_text = "Pharmacos"
 
     logo = "img/logo.png"
     logo_small = "img/logo-small.png"
@@ -430,3 +348,7 @@ pluralizelisttitles = false
   category = "categories"
   tag = "tags"
   author = "authors"
+  blogcategory = "blogcategories"
+  blogtag="blogtags"
+  productcategory="productcategories"
+  producttag="producttags"

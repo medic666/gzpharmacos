@@ -1,9 +1,11 @@
 <div id="heading-breadcrumbs">
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <h1>{{ .Title }}</h1>
-            </div>
+                {{ range .Ancestors.Reverse }}
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <span>-></span>
+                {{ end }}
+                <span aria-current="page">{{ .Title }}</span>
         </div>
     </div>
 </div>

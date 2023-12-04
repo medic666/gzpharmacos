@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+  <head>
+    {{ partial "headers.html" . }}
+    {{ partial "custom_headers.html" . }}
+  </head>
+
+  <body>
+
+    <div id="all">
+
+        <!--{{ partial "top.html" . }}-->
+
+        {{ partial "nav.html" . }}
+
+        {{ partial "breadcrumbs.html" . }}
+
+        <div id="content">
+            <div class="container">
+                <div class="row">
+                    <!-- *** LEFT COLUMN *** -->
+
+                    <div class="col-md-9" id="blog-listing-medium">
+
+                        {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.blogSections) }}
+                        {{ range $paginator.Pages }}
+                        <section class="post">
+                            <div class="row">
+                                <div class="col-md-4">
+                                  <div class="image">
+                                      <a href="{{ .Permalink }}">
+                                          {{ if .Params.banner }}
+                                          <img src="{{ .Params.banner | relURL }}" class="img-responsive" alt="">
+                                          {{ else }}
+                                          <img src="{{ "img/placeholder.png" | relURL }}" class="img-responsive" alt="">
+                                          {{ end }}
+                                      </a>
+                                  </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                                    <div class="clearfix">
+                                        <p class="author-category">
+                                          {{ if isset .Params "authors" }}
+					  {{ i18n "authorBy" }} {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
+                                          {{ end }}
+                                          {{ if isset .Params "blogcategories" }}
+                                          {{ if gt (len .Params.blogcategories) 0 }}
+                                          in 
+                                          {{ range $index, $category := .Params.blogcategories }}{{ if $index }}, {{ end }}
+                                              <a href="{{ "blogcategories/" | relLangURL }}{{ . | urlize | lower }}">{{ $category }}</a>{{ end }}
+                                          {{ end }}
+                                          {{ end }}
+
+                                        </p>
+                                        {{ if isset .Params "date" }}
+
+                                        {{ $createdAt := .Date.Format .Site.Params.date_format }}
+                                        {{ range $index, $month := slice "January" "February" "March" "April" "May" "June" "July" "August" "September" "October" "November" "December" }}
+                                            {{ $createdAt = replace $createdAt $month (i18n $month) }}
+                                        {{ end }}
+
+                                        <p class="date-comments">
+                                            <a href="{{ .Permalink }}"><i class="far fa-calendar"></i> {{ $createdAt }}</a>
+                                        </p>
+                                        {{ end }}
+                                    </div>
+                                    {{ if not .Site.Params.recent_posts.hide_summary }}
+                                    <p class="intro">{{ .Summary }}</p>
+                                    <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a>
+                                    </p>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </section>
+                        {{ end }}
+
+                        <ul class="pager">
+                            {{ if .Paginator.HasPrev }}
+                            <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
+                            {{ else }}
+                            <li class="previous disabled"><a href="#">&larr; {{ i18n "newer" }}</a></li>
+                            {{ end }}
+
+                            {{ if .Paginator.HasNext }}
+                            <li class="next"><a href="{{ .Paginator.Next.URL | relURL }}">{{ i18n "older" }} &rarr;</a></li>
+                            {{ else }}
+                            <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    <!-- /.col-md-9 -->
+
+                    <!-- *** LEFT COLUMN END *** -->
+
+                    <!-- *** RIGHT COLUMN ***
+       _________________________________________________________ -->
+
+       <div class="col-sm-3">
+
+        <!-- *** MENUS AND WIDGETS *** -->
+
+        {{ if isset .Site.Params.widgets "search" }}
+        {{ if .Site.Params.widgets.search }}
+        <div class="panel panel-default sidebar-menu">
+
+            <div class="panel-heading">
+            <h3 class="panel-title">{{ i18n "searchTitle" }}</h3>
+            </div>
+
+            <div class="panel-body">
+                <form action="//google.com/search" method="get" accept-charset="UTF-8" role="search">
+                    <div class="input-group">
+                        <input type="search" name="q" class="form-control" placeholder="{{ i18n "searchTitle" }}">
+                        <input type="hidden" name="sitesearch" value="{{ "/" | absURL }}">
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-template-main"><i class="fas fa-search"></i></button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+        {{ end }}
+        {{ end }}
+
+        {{ if .Site.Params.widgets.categories }}
+        {{ if isset .Site.Taxonomies "blogcategories" }}
+        {{ if not (eq (len .Site.Taxonomies.blogcategories) 0) }}
+        <div class="panel panel-default sidebar-menu">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ i18n "categoriesTitle" }}</h3>
+            </div>
+
+            <div class="panel-body">
+                <ul class="nav nav-pills nav-stacked">
+                    {{ $current := . }}
+                    {{ range $name, $items := .Site.Taxonomies.blogcategories }}
+                    <li{{ if eq $current.RelPermalink ($name | urlize | lower | printf "/categories/%s/") }} class="active"{{ end }}>
+                        <a href="{{ "blogcategories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | upper }} ({{ len $items }})</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+        {{ if .Site.Params.widgets.tags }}
+        {{ if isset .Site.Taxonomies "blogtags" }}
+        {{ if not (eq (len .Site.Taxonomies.producttags) 0) }}
+        <div class="panel sidebar-menu">
+
+            <div class="panel-heading">
+                <h3 class="panel-title">{{ i18n "tagsTitle" }}</h3>
+            </div>
+
+            <div class="panel-body">
+                <ul class="tag-cloud">
+                    {{ $current := . }}
+                    {{ range $name, $items := .Site.Taxonomies.blogtags }}
+                    <li {{ if eq $current.RelPermalink (printf "%s/%s/" ("tags" | relLangURL) ($name | urlize | lower)) }}class="active"{{ end }}>
+                        <a href="{{ "blogtags/" | relLangURL }}{{ $name | urlize | lower }}"><i class="fas fa-tags"></i> {{ $name }}</a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+
+        </div>
+        {{ end }}
+        {{ end }}
+        {{ end }}
+
+
+
+
+        <!-- *** MENUS AND FILTERS END *** -->
+
+    </div>
+    <!-- /.col-md-3 -->
+
+                    <!-- *** RIGHT COLUMN END *** -->
+
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#content -->
+
+        {{ partial "footer.html" . }}
+
+    </div>
+    <!-- /#all -->
+
+    {{ partial "scripts.html" . }}
+
+  </body>
+</html>

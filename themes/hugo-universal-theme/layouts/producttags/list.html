@@ -22,9 +22,8 @@
                     <!-- *** LEFT COLUMN *** -->
 
                     <div class="col-sm-9" id="blog-listing-medium">
-
+                        {{if gt (where .Data.Pages "Type" "in" .Site.Params.productSections)  0}}
                         {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.productSections) 12 }}
-                        
                         <section class="post">
                             <div class="row">
                             {{ range $paginator.Pages }}
@@ -76,6 +75,23 @@
                             {{ end }}    
                             </div>
                         </section>
+                        {{else}}
+                        {{ $paginator := .Paginate (.Data.Pages) 12 }}
+                        <section class="post">
+                            
+                            {{ range $paginator.Pages }}
+                                <div class="row">
+                                <div class="col-sm-12">
+                                <h2><a href="{{ .Permalink }}">{{ .Title|upper }}</a></h2>
+                                {{ if not .Site.Params.recent_posts.hide_summary }}
+                                <p class="read-more"><a href="{{ .Permalink }}" class="btn btn-template-main">{{ i18n "continueReading" }}</a></p>
+                                {{ end }}
+                                </div>
+                            </div>    
+                            {{ end }}    
+                            
+                        </section>
+                        {{end}}
                         
                         <div>
                         <ul class="pager" class="col-sm-9">

@@ -21,14 +21,13 @@
                 <div class="row">
                     <!-- *** LEFT COLUMN *** -->
 
-                    <div class="col-sm-9" id="blog-listing-medium">
+                    <div class="col-md-9" id="blog-listing-medium">
 
-                        {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.productSections) 12 }}
-                        
+                        {{ $paginator := .Paginate (where .Data.Pages "Type" "in" .Site.Params.blogSections) }}
+                        {{ range $paginator.Pages }}
                         <section class="post">
                             <div class="row">
-                            {{ range $paginator.Pages }}
-                                <div class="col-sm-4 col-xs-6">
+                                <div class="col-md-4">
                                   <div class="image">
                                       <a href="{{ .Permalink }}">
                                           {{ if .Params.banner }}
@@ -38,18 +37,19 @@
                                           {{ end }}
                                       </a>
                                   </div>
-                                  <div >
+                                </div>
+                                <div class="col-md-8">
                                     <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                                     <div class="clearfix">
                                         <p class="author-category">
                                           {{ if isset .Params "authors" }}
-					                        {{ i18n "authorBy" }} {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
+					  {{ i18n "authorBy" }} {{ range $index, $author := .Params.authors }}{{ if $index }}, {{ end }}<a href="{{ (printf "%s/%s" ("authors" | relLangURL) ($author | urlize)) }}">{{ $author }}</a>{{ end }}
                                           {{ end }}
-                                          {{ if isset .Params "productcategories" }}
-                                          {{ if gt (len .Params.productcategories) 0 }}
+                                          {{ if isset .Params "blogcategories" }}
+                                          {{ if gt (len .Params.blogcategories) 0 }}
                                           in 
-                                          {{ range $index, $category := .Params.productcategories }}{{ if $index }}, {{ end }}
-                                              <a href="{{ "productcategories/" | relLangURL }}{{ . | urlize | lower }}">{{ $category }}</a>{{ end }}
+                                          {{ range $index, $category := .Params.blogcategories }}{{ if $index }}, {{ end }}
+                                              <a href="{{ "blogcategories/" | relLangURL }}{{ . | urlize | lower }}">{{ $category }}</a>{{ end }}
                                           {{ end }}
                                           {{ end }}
 
@@ -72,13 +72,11 @@
                                     </p>
                                     {{ end }}
                                 </div>
-                                </div>
-                            {{ end }}    
                             </div>
                         </section>
-                        
-                        <div>
-                        <ul class="pager" class="col-sm-9">
+                        {{ end }}
+
+                        <ul class="pager">
                             {{ if .Paginator.HasPrev }}
                             <li class="previous"><a href="{{ .Paginator.Prev.URL | relURL }}">&larr; {{ i18n "newer" }}</a></li>
                             {{ else }}
@@ -91,7 +89,6 @@
                             <li class="next disabled"><a href="#">{{ i18n "older" }} &rarr;</a></li>
                             {{ end }}
                         </ul>
-                        </div>
                     </div>
                     <!-- /.col-md-9 -->
 
@@ -128,8 +125,8 @@
                         {{ end }}
 
                         {{ if .Site.Params.widgets.categories }}
-                        {{ if isset .Site.Taxonomies "productcategories" }}
-                        {{ if not (eq (len .Site.Taxonomies.productcategories) 0) }}
+                        {{ if isset .Site.Taxonomies "blogcategories" }}
+                        {{ if not (eq (len .Site.Taxonomies.blogcategories) 0) }}
                         <div class="panel panel-default sidebar-menu">
 
                             <div class="panel-heading">
@@ -139,9 +136,9 @@
                             <div class="panel-body">
                                 <ul class="nav nav-pills nav-stacked">
                                     {{ $current := . }}
-                                    {{ range $name, $items := .Site.Taxonomies.productcategories }}
+                                    {{ range $name, $items := .Site.Taxonomies.blogcategories }}
                                     <li{{ if eq $current.RelPermalink ($name | urlize | lower | printf "/categories/%s/") }} class="active"{{ end }}>
-                                        <a href="{{ "productcategories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | upper }} ({{ len $items }})</a>
+                                        <a href="{{ "blogcategories/" | relLangURL }}{{ $name | urlize | lower }}">{{ $name | upper }} ({{ len $items }})</a>
                                     </li>
                                     {{ end }}
                                 </ul>
@@ -153,7 +150,7 @@
                         {{ end }}
 
                         {{ if .Site.Params.widgets.tags }}
-                        {{ if isset .Site.Taxonomies "producttags" }}
+                        {{ if isset .Site.Taxonomies "blogtags" }}
                         {{ if not (eq (len .Site.Taxonomies.producttags) 0) }}
                         <div class="panel sidebar-menu">
 
@@ -164,9 +161,9 @@
                             <div class="panel-body">
                                 <ul class="tag-cloud">
                                     {{ $current := . }}
-                                    {{ range $name, $items := .Site.Taxonomies.producttags }}
+                                    {{ range $name, $items := .Site.Taxonomies.blogtags }}
                                     <li {{ if eq $current.RelPermalink (printf "%s/%s/" ("tags" | relLangURL) ($name | urlize | lower)) }}class="active"{{ end }}>
-                                        <a href="{{ "producttags/" | relLangURL }}{{ $name | urlize | lower }}"><i class="fas fa-tags"></i> {{ $name }}</a>
+                                        <a href="{{ "blogtags/" | relLangURL }}{{ $name | urlize | lower }}"><i class="fas fa-tags"></i> {{ $name }}</a>
                                     </li>
                                     {{ end }}
                                 </ul>

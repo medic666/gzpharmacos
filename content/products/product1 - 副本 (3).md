@@ -1,10 +1,8 @@
 +++
-title = "新的产品list页"
-date = "2021-08-01T21:29:20+02:00"
-tags = ["golang", "programming", "theme", "hugo","probig","probig1","probig2","probig3","probig4","probig5","probig6","probig7","probig8"]
-categories = ["programming","lorem","pseudo","zuoyue"]
+title = "New product 1"
+producttags = ["probig1"]
+productcategories = ["shampoo","hair conditioner"]
 banner = "img/banners/banner-4.jpg"
-authors = ["John Doe"]
 +++
 
 I'm a post with multiple categories in the frontmatter:

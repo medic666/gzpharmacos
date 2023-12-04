@@ -1,15 +1,13 @@
 +++
-title = "Categories Post"
-date = "2021-08-01T21:29:20+02:00"
-blogtags = ["golang", "programming", "theme", "hugo"]
-blogcategories = ["programming","lorem","pseudo"]
+title = "New product 5"
+producttags = ["probig5"]
+productcategories = ["perfume","hair conditioner"]
 banner = "img/banners/banner-4.jpg"
-authors = ["John Doe"]
 +++
 
-I'm a post with multiple categories in the frontmatter:
+I'm a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
 
-    categories = ["programming","lorem","pseudo"]
+    menu = "main"
 
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus. Pellentesque sed tempus risus. Proin id hendrerit ante. Vestibulum vitae urna ut mauris ultricies dignissim. Ut ante turpis, tristique vitae sagittis quis, sagittis nec diam. Fusce pulvinar cursus porta. Vivamus maximus leo dolor, ut pellentesque lorem fringilla nec. Mauris faucibus turpis posuere sapien euismod, a ullamcorper mi maximus.
